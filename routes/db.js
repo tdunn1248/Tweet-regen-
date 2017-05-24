@@ -1,9 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
+//function batch to handle queries
 const db = require('../queries')
 
-//database routes
+// authorization keys
+const client = require('./config')
+
+//db CRUD routes
+
 // app.get('/api/getTweets', (req, res) => {
 //   db.grabTweets()
 //     .then( data => {
@@ -13,7 +18,5 @@ const db = require('../queries')
 //       console.log(err)
 //     })
 // })
-
-
 
 module.exports = router
