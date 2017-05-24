@@ -4,12 +4,13 @@ const app = express()
 
 const port = 3004
 
-const config = require('./routes/config')
-const twitterAPI = require('./routes/twitterAPI')()
-// require db routes
+const client = require('./javascripts/config')
+const twitterAPI = require('./javascripts/twitterAPI')
+const queries = require('./database/queries')
+
+twitterAPI()
 
 app.use(bodyParser.urlencoded({extended: true}))
-
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
