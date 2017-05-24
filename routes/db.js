@@ -1,16 +1,18 @@
 const express = require('express')
 const router = express.Router()
+//
 
-//function batch to handle queries
-const db = require('../queries')
+// functions to handle queries
+const queries = require('../database/queries')
 
 // authorization keys
 const client = require('./config')
 
-//db CRUD routes
+//db CReadUD routes
+
 
 // app.get('/api/getTweets', (req, res) => {
-//   db.grabTweets()
+//   queries.grabTweets()
 //     .then( data => {
 //       res.json(data)
 //     })

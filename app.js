@@ -2,7 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
-
 const port = 3004
 
 const config = require('./routes/config')
@@ -21,12 +20,10 @@ app.get('/tweets', (req, res) => {
   res.render('index')
 })
 
-
 app.listen(port, () => {
   console.log('listenin to port: ' + port +  ', fool')
 })
 
 module.exports = app
 
-// javascript folder should be in routes folder
 // what else do i need to export

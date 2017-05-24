@@ -3,12 +3,12 @@ const app = express()
 
 const client = require('./config')
 
-function searchTweets(){
-  client.get('search/tweets', {q: 'harley since:2012-05-01', count: 100},(err, data,res) => {
+function grabAllTwitterTweets(){
+  client.get('statuses/user_timeline', {q: {screen_name: 'echoQuoter'}} ,(err, tweet,res) => {
     if(err) {
        console.log(err)
     } else {
-      data.statuses.forEach(s => {
+      tweet.forEach(s => {
         const user = {
           username: s.user.screen_name,
           location: s.user.location,
@@ -22,4 +22,4 @@ function searchTweets(){
   })
 }
 
-module.exports = searchTweets
+module.exports = grabAllTwitterTweets
