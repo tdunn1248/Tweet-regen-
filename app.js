@@ -6,6 +6,7 @@ const config = require('./javascript/config')()
 const port = 3004
 
 app.use(bodyParser.urlencoded({extended: true}))
+//app.use the router
 app.set('view engine', 'ejs')
 
 // app.get('/', (req, res) => {
@@ -16,7 +17,6 @@ app.set('view engine', 'ejs')
 //   twitterAPI.searchTweets()
 //   res.render('index')
 // })
-
 
 
 app.listen(port, () => {

@@ -1,6 +1,5 @@
-//Export a function
-//run it by hitting the route '/tweets'
-//Bring in the Twitter module, and work with that
+// client is my router??
+
 require('dotenv').config()
 const Twit = require('twit')
 const client = new Twit({
@@ -12,13 +11,14 @@ const client = new Twit({
 
 function searchTweets(){
   console.log('Getting tweets!')
-
-  client.get('search/tweets', {screen_name: 'echoQuoter', q: 'Obama since:2017-05-01', count: 5},(err, data,res) => {
+  client.get('search/tweets', {q: 'Obama since:2017-05-01', count: 1},(err, data,res) => {
     if(err) {
        console.log(err)
     } else {
-      console.log(data.statuses) // tweet body
-      // console.log(res) // JSON response
+      data.statuses.forEach(s => {
+        console.log(s.user.screen_name)
+        console.log(s.text)
+      })
     }
   })
 }
