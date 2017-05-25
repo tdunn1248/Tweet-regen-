@@ -4,13 +4,6 @@ function grabTweets() {
   return db.any('SELECT * FROM tweets')
 }
 
-// grabTweets().then(result => {
-//   console.log('the result as promised-->',result)
-// })
-
-
-// console.log('grabTweets()--->',timeLine)
-
 module.exports = {
   grabTweets
 }
