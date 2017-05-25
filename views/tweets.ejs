@@ -6,7 +6,13 @@
         <form action="/tweets" method="GET">
           <button class='btn btn-success btn-lg'>see em!</button>
         </form>
-      </div>
+    </div>
+
+    <div class="container text-center" style="border: 2px solid black">
+      <h3>username: <%= userName %></h3>
+      <% for(let i = 0; i < tweets.length; i++) { %>
+        <li><%= tweets[i].tweetbody %></li>
+      <% } %>
     </div>
 
 <% include partials/footer %>
