@@ -10,12 +10,9 @@
 
     <div class="container text-center" style="border: 2px solid black">
       <h3>username: <%= userName %></h3>
-      <form action="/retweet" method="POST">
-        <button>Retweet Selected</button>
-      </form>
       <% for(let i = 0; i < tweets.length; i++) { %>
         <ul>
-          <li><%= tweets[i].tweetbody %><label>Retweet:<input type='checkbox'></label></li>
+          <li><%= tweets[i].tweetbody %></li>
         </ul>
       <% } %>
     </div>

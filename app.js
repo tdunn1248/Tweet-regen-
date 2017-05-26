@@ -11,7 +11,7 @@ const twitterAPI = require('./javascripts/twitterAPI')()
 const queries = require('./database/queries')
 const db = require('./database/configuration')
 const retweet = require('./javascripts/retweet')
-console.log(retweet)
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -31,7 +31,6 @@ app.get('/tweets', (req, res) => {
 })
 
 app.post('/retweet', function(req, res) {
-  console.log(req.url)
   retweet()
   res.redirect('tweets')
 })

@@ -1,6 +1,6 @@
 # Tweet-reGenerator with Node.js
 
-## Thomas Dunn
+### Thomas Dunn
 ## Challenge Rubric
 
 ## Description
