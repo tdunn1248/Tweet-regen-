@@ -11,7 +11,7 @@ const twitterAPI = require('./javascripts/twitterAPI')()
 const queries = require('./database/queries')
 const db = require('./database/configuration')
 const retweet = require('./javascripts/retweet')
-
+console.log(retweet)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -23,14 +23,15 @@ app.get('/', (req, res) => {
 
 app.get('/tweets', (req, res) => {
   queries.grabTweets()
-    .then(tweets => {
-      let userName = tweets[0].username
-      let timeLine = tweets[0].tweetbody
+  .then(tweets => {
+    let userName = tweets[0].username
+    let timeLine = tweets[0].tweetbody
       res.render('tweets', {userName: userName, tweets: tweets, timeLine: timeLine})
-    }).catch(err => console.log('errrror',err))
-  })
+  }).catch(err => console.log('errrror',err))
+})
 
 app.post('/retweet', function(req, res) {
+  console.log(req.url)
   retweet()
   res.redirect('tweets')
 })
