@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>See them tweets!</h1>
+        <form action="/tweets" method="GET">
+          <button class='btn btn-success btn-lg'>see em!</button>
+        </form>
+    </div>
+
+    <div class="container text-center" style="border: 2px solid black">
+      <h3>username: <%= userName %></h3>
+      <% for(let i = 0; i < tweets.length; i++) { %>
+        <ul>
+          <li><%= tweets[i].tweetbody %></li>
+        </ul>
+      <% } %>
+    </div>
+
+<% include partials/footer %>

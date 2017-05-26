@@ -1,0 +1,21 @@
+body {
+  background-color: aqua;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.jumbotron {
+  background-color: blue;
+  color: #f8f8f8;
+}
+
+label {
+  margin-left: 5px;
+}
+
+input {
+  margin-left: 2px;
+}
